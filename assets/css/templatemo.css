@@ -1,13 +1,13 @@
 
 /* General */
 
-.text-success { color: #ffa0eb !important;}
-.text-light { color: #ffa0eb !important;}
+.text-success { color: #030303 !important;}
+.text-light { color: #000000 !important;}
 .bg-light { background-color: #e9eef5 !important;}
 .bg-success { background-color: #ffa0eb !important;}
 .btn-success {
-  background-color: #ffa0eb !important;
-  border-color: #ffa0eb !important;
+  background-color: #000000 !important;
+  border-color: #000000 !important;
 }
 
 /* Nav */
@@ -76,11 +76,7 @@
   color: #212934;
   transition: .5s;
 }
-/*
-// Extra small devices (portrait phones, less than 576px)
-// No media query since this is the default in Bootstrap
-*/
-/* Small devices (landscape phones, 576px and up)*/
+
 .product-wap .h3, .product-wap li, .product-wap i, .product-wap p {
   font-size: 12px !important;
 }
@@ -93,12 +89,10 @@
   .tempaltemo-carousel .h1 { font-size: 1em !important;}
 }
 
-/*// Medium devices (tablets, 768px and up)*/
 @media (min-width: 768px) {
   #templatemo_main_nav .navbar-nav {max-width: 450px;}
  }
 
-/* Large devices (desktops, 992px and up)*/
 @media (min-width: 992px) {
   #templatemo_main_nav .navbar-nav {max-width: 550px;}
   #template-mo-zay-hero-carousel .carousel-item {min-height: 30rem !important;}
@@ -109,5 +103,4 @@
   }
 }
 
-/* Extra large devices (large desktops, 1200px and up)*/
 @media (min-width: 1200px) {}

@@ -18,6 +18,9 @@ text-decoration: none;
 background-color: #983baa;
 transform: translateY(-7px);
 }
+.ctvsa{
+    color: #fffadf;
+}
 
 @media only screen and (max-width: 600px) {
 .btn-flotante {

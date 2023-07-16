@@ -15,6 +15,8 @@
     <link href="assets/css/estilos.css" rel="stylesheet" />
     <link rel="apple-touch-icon" href="assets/img/apple-icon.png">
     <link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.ico">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+
 
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
@@ -26,42 +28,45 @@
 <body>
     <a href="#" class="btn-flotante" id="btnCarrito">Carrito <span class="badge bg-success" id="carrito">0</span></a>
 
-    <header class="bg-dark py-5">
+    <header class="bg-dark py-1">
         <div class="container px-4 px-lg-5 my-5">
-            <div class="text-center text-white">
+            <div class="head-content text-center text-white">
+            <img src="./assets/img/logo.jpg" alt="">
                 <h1 class="display-4 fw-bolder">Metamorphosis Style</h1>
-                <p class="lead fw-normal text-white-50 mb-0">Tienda de Cosméticos</p>
+                <h1 class="display-4 fw-bolder">By Marilin Chancay</h1>
             </div>
             <div class="container">
         <nav class="navbar navbar-expand-lg navbar-light">
             <div class="container-fluid">
-                <a class="asfasfasf" href="./">Metamorphosis Style</a>
                 <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                     <span class="navbar-toggler-icon"></span>
                 </button>
                 <div class="collapse navbar-collapse" id="navbarNav">
                     
                     <ul class="navbar-nav">
+                        <a href="./" class="nav-link" category="all">Inicio</a>
+                        <a href="./nosotros.php" class="nav-link" category="all">Nosotros</a>
+                        <a href="./servicios.php" class="nav-link" category="all">Nuestros Servicios</a>
                         <a href="./categoria.php" class="nav-link" category="all">Categorías</a>
+                        <a href="./horario.php" class="nav-link" category="all">Horarios de Atención</a>
                     </ul>
                     <?php
 session_start();
 
-// ... Código de inicio de sesión ...
 
 function mostrarNombreUsuario() {
     if (isset($_SESSION['nombre'])) {
-        echo $_SESSION['nombre'];
+        echo $_SESSION['nombre']; 
     } else {
         echo "Iniciar sesión";
     }
 }
 
-// ... Resto del código ...
 ?>
                     <ul>
                         <a class="login" href="./admin/index.php"><?php mostrarNombreUsuario(); ?></a>
                     </ul>
+                    
                 </div>
             </div>
         </nav>
@@ -70,56 +75,100 @@ function mostrarNombreUsuario() {
     </header>
     
     <section class="py-5">
+    <img class="img-section" src="./assets/img/logo.jpg" alt="">
         <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <?php
-                $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria");
-                $result = mysqli_num_rows($query);
-                if ($result > 0) {
-                    while ($data = mysqli_fetch_assoc($query)) { ?>
-                        <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                            <img class="card-img-top" src="assets/img/<?php echo $data['imagen']; ?>" alt="..." />
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-success text-white mt-2 agregar" data-id="<?php echo $data['id']; ?>" href="#"><i class="fas fa-cart-plus"></i></a></div>
-                                </div>
-                                     </ul>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                        <h5 class="fw-bolder"><?php echo $data['nombre'] ?></h5>
-                                        <p><?php echo $data['descripcion']; ?></p>
-                                        <div class="d-flex justify-content-center small text-warning mb-2">
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                        </div>
-                                </ul>
-                                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                    <li>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?php echo ($data['precio_normal'] > $data['precio_rebajado']) ? 'Oferta' : ''; ?></div>
-                                <p class="text-center mb-0 text-decoration-line-through" style="color:gray;" >$<?php echo $data['precio_normal'] ?></p>
-                                <p class="text-center mb-0">$<?php echo $data['precio_rebajado'] ?></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php  }
-                } ?>
+            <p>En nuestro salón de belleza, nos apasiona realzar tu belleza y brindarte 
+            una experiencia de cuidado personalizada.</p>
+            <p>¡No esperes más para darle a tu cabello el cuidado que se merece! 
+                Agenda una cita con nosotros y déjanos transformar tu estilo con
+                 nuestros servicios de peluquería de primera clase. Esperamos verte 
+                 pronto en nuestra peluquería.</p>
+                 <div class="gallery-flex">
+                <img src="/assets/img/uno.jpg">
+                <img src="/assets/img/dos.jpg">
+                <img src="/assets/img/tres.jpg">
+                <img src="/assets/img/cuatro.jpg">
+                <img src="/assets/img/cinco.jpg">
+            </div>
+            
 
+        </div>
+
+        <div class='b-svc'>
+            <div class="b-inside">
+            <div class="services content">
+                <div class="box-content">
+                    <h2>Nuestros servicios</h2>
+                    <p>Aquí encontrarás todo lo necesario para realzar tu belleza
+                     y mantener tu glamour en todo momento. Escríbenos o llámanos 
+                     y cuéntanos que servicios te gustaría recibir, estaremos encantados
+                      de recibirte.</p>
+                      <div class="b-svc">
+
+                    </div>
+                </div>
+            </div>
+            <div class='box'>
+                <div class='content'>
+                    <div class="cnt-ind">
+                    <img src="/assets/img/icon1.jpg" alt="">
+                    <h2>Cabello</h2>
+                    </div>
+                    <p>Laceados y Alisados</p>
+                    <p>Balayage, Mechas o Rayitos</p>
+                    <p>Cepillado y Planchado</p>
+                    <p>Cortes, Secados, Keratinas</p>
+                    <p>Tintes de todo color</p>
+                </div>
+                <div class='corners top'></div>
+                <div class='corners bottom'></div>
+          </div>
+          <div class='box'>
+                <div class='content'>
+                    <div class="cnt-ind">
+                    <img src="/assets/img/icon2.png" alt="">
+                    <h2>Make-Up</h2>
+                    </div>
+                    <p>Peinados</p>
+                    <p>Cepillado y Planchado</p>
+                    <p>Maquillaje</p>
+                    <p>Maquillaje para Novias</p>
+                    <p>Exfoliantes</p>
+                    <p>Barbería</p>
+                </div>
+                <div class='corners top'></div>
+                <div class='corners bottom'></div>
+          </div>
+          <div class='box'>
+                <div class='content'>
+                    <div class="cnt-ind">
+                    <img src="/assets/img/incon3.jpg" alt="">
+                    <h2>Uñas</h2>
+                    </div>
+                    <p>Manicure y Pedicure</p>
+                    <p>Depilación de Rostro</p>
+                    <p>Depilación de Cejas</p>
+                    <p>Pigmentación</p>
+                    <p>Depilación Axilar y de Pierna</p>
+                </div>
+                <div class='corners top'></div>
+                <div class='corners bottom'></div>
+          </div>
             </div>
         </div>
+        <div class="container-hor">
+      <div class="box-hor">
+        <h2>Horario de servicio</h2>
+        <h3>Visítanos</h3>
+        <p>Martes - Sábados: 9 a. m. - 6 p. m.</p>
+        <p>Domingo: 10 a. m. - 2 p. m.</p>
+        <p>Lunes: cerrado</p>
+      </div>
+      <div class="box-meta"> 
+            <img src="/assets/img/port-hor.jpg" alt="foto de persona">
+      </div>
+    </div>
+
     </section>
     <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
@@ -130,15 +179,15 @@ function mostrarNombreUsuario() {
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            Calle
+                            Cdla Montalvan, Montecristi, Ecuador
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">156-484-4865</a>
+                            <a class="text-decoration-none" href="tel:010-020-0340">0961789353</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="">metastyle@gmail.com</a>
+                            <a class="text-decoration-none" href="">marilinchancay@hotmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -166,7 +215,7 @@ function mostrarNombreUsuario() {
 
             </div>
 
-            <div class="row text-light mb-4">
+            <div class="row text-light mb-1">
                 <div class="col-12 mb-3">
                     <div class="w-100 my-3 border-top border-light"></div>
                 </div>

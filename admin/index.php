@@ -47,10 +47,11 @@ if (!empty($_SESSION['active'])) {
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <title>Iniciar Sesión</title>
     <link rel="stylesheet" type="text/css" href="../assets/css/sb-admin-2.min.css">
+    <link rel="stylesheet" type="text/css" href="../assets/css/estilo-adm.css">
     <link rel="shortcut icon" href="../assets/img/favicon.ico" />
 </head>
 
-<body class="bg-gradient-primary">
+<body >
 
     <div class="container">
 

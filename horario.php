@@ -20,8 +20,6 @@
 
     <link rel="stylesheet" href="assets/css/templatemo.css">
     <link rel="stylesheet" href="assets/css/custom.css">
-    <link rel="stylesheet" href="assets/css/error-filter.css">
-    <link rel="stylesheet" href="assets/css/categoria.css">
 
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;200;300;400;500;700;900&display=swap">
     <link rel="stylesheet" href="assets/css/fontawesome.min.css">
@@ -77,124 +75,20 @@ function mostrarNombreUsuario() {
     </header>
     
     <section class="py-5">
-    <?php
-$query_categorias = mysqli_query($conexion, "SELECT DISTINCT categoria FROM categorias");
-$categorias = mysqli_fetch_all($query_categorias, MYSQLI_ASSOC);
-?>
-                        <a href="#" class="TITTLE-SA" category="all">Categorías</a>
-
-<form action="" method="GET">
-    <div class="filter-box">
-    <div class="filter-in">
-    <select name="categoria">
-        <option value="">Todas las categorías</option>
-        <?php foreach ($categorias as $categoria) { ?>
-            <option value="<?php echo $categoria['categoria']; ?>" <?php if (isset($_GET['categoria']) && $_GET['categoria'] == $categoria['categoria']) echo 'selected'; ?>>
-                <?php echo $categoria['categoria']; ?>
-            </option>
-        <?php } ?>
-    </select>
-    <button type="submit">Filtrar</button>
-    </div>
-    </div>
-</form>
-
-
-
-<?php
-if (isset($_GET['categoria']) && $_GET['categoria'] !== '') {
-    $categoriaSeleccionada = $_GET['categoria'];
-
-    // Realiza la consulta filtrando por categoría
-    $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria WHERE c.categoria = '$categoriaSeleccionada'");
-} else {
-    // Consulta sin filtro de categoría
-    $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria");
-}
-
-$result = mysqli_num_rows($query);
-
-if ($result > 0) {
-    while ($data = mysqli_fetch_assoc($query)) {
-        ?>
-        <section class="py-5">
-        <div class="container px-4 px-lg-5">
-            <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
-                <?php
-                $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria");
-                $result = mysqli_num_rows($query);
-                if ($result > 0) {
-                    while ($data = mysqli_fetch_assoc($query)) { ?>
-                        <div class="col-md-4">
-                        <div class="card mb-4 product-wap rounded-0">
-                            <div class="card rounded-0">
-                            <img class="card-img-top" src="assets/img/<?php echo $data['imagen']; ?>" alt="..." />
-                                <div class="card-img-overlay rounded-0 product-overlay d-flex align-items-center justify-content-center">
-                                    <ul class="list-unstyled">
-                                    <div class="card-footer p-4 pt-0 border-top-0 bg-transparent">
-                                    <div class="text-center"><a class="btn btn-success text-white mt-2 agregar" data-id="<?php echo $data['id']; ?>" href="#"><i class="fas fa-cart-plus"></i></a></div>
-                                </div>
-                                     </ul>
-                                </div>
-                            </div>
-                            <div class="text-center">
-                                        <h5 class="fw-bolder"><?php echo $data['nombre'] ?></h5>
-                                        <p><?php echo $data['descripcion']; ?></p>
-                                        <div class="d-flex justify-content-center small text-warning mb-2">
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                            <div class="bi-star-fill"></div>
-                                        </div>
-                                </ul>
-                                <ul class="list-unstyled d-flex justify-content-center mb-1">
-                                    <li>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-warning fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                        <i class="text-muted fa fa-star"></i>
-                                    </li>
-                                </ul>
-                                <div class="badge bg-danger text-white position-absolute" style="top: 0.5rem; right: 0.5rem"><?php echo ($data['precio_normal'] > $data['precio_rebajado']) ? 'Oferta' : ''; ?></div>
-                                <p class="text-center mb-0 text-decoration-line-through" style="color:gray;" >$<?php echo $data['precio_normal'] ?></p>
-                                <p class="text-center mb-0">$<?php echo $data['precio_rebajado'] ?></p>
-                            </div>
-                        </div>
-                    </div>
-                <?php  }
-                } ?>
-
-            </div>
-        </div>
-        <?php
-    }
-} else {?>
-
-
-<div class="box-error">
-       <div class="results"><span>No Se encontraron reultados</span></div> 
-    <div class="george">
-  <div class="shadow"></div>
-  <div class="george_flower"></div>
-  <div class="george_head">
-    <div class="line"></div>
-    <div class="cheek"></div>
-    <div class="eye"></div>
-    <div class="eye"></div>
-  </div>
-  <div class="pot_top"></div>
-  <div class="pot_body"></div>
-  <div class="pot_plate"></div>
-</div>
+  
+        <div class="container-hor">
+      <div class="box-hor">
+        <h2>Horario de servicio</h2>
+        <h3>Visítanos</h3>
+        <p>Martes - Sábados: 9 a. m. - 6 p. m.</p>
+        <p>Domingo: 10 a. m. - 2 p. m.</p>
+        <p>Lunes: cerrado</p>
+      </div>
+      <div class="box-meta"> 
+            <img src="/assets/img/port-hor.jpg" alt="foto de persona">
+      </div>
     </div>
 
-
-<?php }
-
-
-?>
     </section>
     <footer class="bg-dark" id="tempaltemo_footer">
         <div class="container">
