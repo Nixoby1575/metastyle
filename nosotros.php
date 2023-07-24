@@ -113,15 +113,15 @@ function mostrarNombreUsuario() {
                     <ul class="list-unstyled text-light footer-link-list">
                         <li>
                             <i class="fas fa-map-marker-alt fa-fw"></i>
-                            Cdla Montalvan, Montecristi, Ecuador
+                            <a href="https://goo.gl/maps/WpqN53e5mWWM8fkF8">Cdla Montalvan, Montecristi, Ecuador</a>
                         </li>
                         <li>
                             <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">0961789353</a>
+                            <a class="text-decoration-none" href="https://wa.me/message/3WORETA3AKYVE1?src=qr">+593 961789353</a>
                         </li>
                         <li>
                             <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="">marilinchancay@hotmail.com</a>
+                            <a class="text-decoration-none" href="mailto:marilinchancay@hotmail.com">marilinchancay@hotmail.com</a>
                         </li>
                     </ul>
                 </div>
@@ -142,8 +142,9 @@ function mostrarNombreUsuario() {
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Contenido</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="nav-link" href="#" style="font-size:15px;">Inicio</a></li>
+                        <li><a class="nav-link" href="/index.php" style="font-size:15px;">Inicio</a></li>
                         <li><a class="nav-link" href="#" style="font-size:15px;">Sobre Nosotros</a></li>
+                        <li><a class="nav-link" href="categoria.php" style="font-size:15px;">Categoría</a></li>
                     </ul>
                 </div>
 
@@ -159,11 +160,11 @@ function mostrarNombreUsuario() {
                             <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                            <a class="text-light text-decoration-none" target="_blank" href="https://instagram.com/by.marilin_chancay?igshid=MzNlNGNkZWQ4Mg=="><i class="fab fa-instagram fa-lg fa-fw"></i></a>
                         </li>
                         <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
-                        </li>
+                <a class="text-light text-decoration-none" target="_blank" href="https://wa.me/message/3WORETA3AKYVE1?src=qr"><i class="fab fa-whatsapp fa-lg fa-fw"></i></a>
+                </li>
                     </ul>
                 </div>
             </div>

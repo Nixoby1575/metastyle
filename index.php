@@ -171,45 +171,45 @@ function mostrarNombreUsuario() {
 
     </section>
     <footer class="bg-dark" id="tempaltemo_footer">
-        <div class="container">
-            <div class="row">
+    <div class="container">
+    <div class="row">
 
-                <div class="col-md-4 pt-5">
-                    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Metamorphosis Style</h2>
-                    <ul class="list-unstyled text-light footer-link-list">
-                        <li>
-                            <i class="fas fa-map-marker-alt fa-fw"></i>
-                            Cdla Montalvan, Montecristi, Ecuador
-                        </li>
-                        <li>
-                            <i class="fa fa-phone fa-fw"></i>
-                            <a class="text-decoration-none" href="tel:010-020-0340">0961789353</a>
-                        </li>
-                        <li>
-                            <i class="fa fa-envelope fa-fw"></i>
-                            <a class="text-decoration-none" href="">marilinchancay@hotmail.com</a>
-                        </li>
-                    </ul>
+    <div class="col-md-4 pt-5">
+    <h2 class="h2 text-success border-bottom pb-3 border-light logo">Metamorphosis Style</h2>
+    <ul class="list-unstyled text-light footer-link-list">
+    <li>
+    <i class="fas fa-map-marker-alt fa-fw"></i>
+    <a href="https://goo.gl/maps/WpqN53e5mWWM8fkF8">Cdla Montalvan, Montecristi, Ecuador</a>
+     </li>
+    <li>
+    <i class="fa fa-phone fa-fw"></i>
+    <a class="text-decoration-none" href="https://wa.me/message/3WORETA3AKYVE1?src=qr">0961789353</a>
+    </li>
+    <li>
+    <i class="fa fa-envelope fa-fw"></i>
+    <a class="text-decoration-none" href="mailto:marilinchancay@hotmail.com">marilinchancay@hotmail.com</a>
+                </li>
+                </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Productos</h2>
                     <ul class="list-unstyled text-light footer-link-list">
                     <li class="navbar-nav">
-                        <?php
-                        $query = mysqli_query($conexion, "SELECT * FROM categorias");
-                        while ($data = mysqli_fetch_assoc($query)) { ?>
-                            <a href="#" class="nav-link" style="font-size:15px" category="<?php echo $data['categoria']; ?>"><?php echo $data['categoria']; ?></a>
-                        <?php } ?>
-                        </li>
+                    <?php
+                    $query = mysqli_query($conexion, "SELECT * FROM categorias");
+                    while ($data = mysqli_fetch_assoc($query)) { ?>
+                    <a href="#" class="nav-link" style="font-size:15px" category="<?php echo $data['categoria']; ?>"><?php echo $data['categoria']; ?></a>
+                    <?php } ?>
+                    </li>
                     </ul>
                 </div>
 
                 <div class="col-md-4 pt-5">
                     <h2 class="h2 text-light border-bottom pb-3 border-light">Contenido</h2>
                     <ul class="list-unstyled text-light footer-link-list">
-                        <li><a class="nav-link" href="#" style="font-size:15px;">Inicio</a></li>
-                        <li><a class="nav-link" href="#" style="font-size:15px;">Sobre Nosotros</a></li>
+                    <li><a class="nav-link" href="#" style="font-size:15px;">Inicio</a></li>
+                    <li><a class="nav-link" href="/nosotros.php" style="font-size:15px;">Sobre Nosotros</a></li>
                     </ul>
                 </div>
 
@@ -217,20 +217,20 @@ function mostrarNombreUsuario() {
 
             <div class="row text-light mb-1">
                 <div class="col-12 mb-3">
-                    <div class="w-100 my-3 border-top border-light"></div>
+                <div class="w-100 my-3 border-top border-light"></div>
                 </div>
                 <div class="col-auto me-auto">
-                    <ul class="list-inline text-left footer-icons">
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://www.instagram.com/"><i class="fab fa-instagram fa-lg fa-fw"></i></a>
-                        </li>
-                        <li class="list-inline-item border border-light rounded-circle text-center">
-                            <a class="text-light text-decoration-none" target="_blank" href="https://twitter.com/"><i class="fab fa-twitter fa-lg fa-fw"></i></a>
-                        </li>
-                    </ul>
+                <ul class="list-inline text-left footer-icons">
+                <li class="list-inline-item border border-light rounded-circle text-center">
+                <a class="text-light text-decoration-none" target="_blank" href="http://facebook.com/"><i class="fab fa-facebook-f fa-lg fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item border border-light rounded-circle text-center">
+                <a class="text-light text-decoration-none" target="_blank" href="https://instagram.com/by.marilin_chancay?igshid=MzRlODBiNWFlZA=="><i class="fab fa-instagram fa-lg fa-fw"></i></a>
+                </li>
+                <li class="list-inline-item border border-light rounded-circle text-center">
+                <a class="text-light text-decoration-none" target="_blank" href="https://wa.me/message/3WORETA3AKYVE1?src=qr"><i class="fab fa-whatsapp fa-lg fa-fw"></i></a>
+                </li>
+                </ul>
                 </div>
             </div>
         </div>
@@ -240,5 +240,4 @@ function mostrarNombreUsuario() {
     <script src="assets/js/jquery-3.6.0.min.js"></script>
     <script src="assets/js/scripts.js"></script>
 </body>
-
 </html>

@@ -1,7 +1,7 @@
 <?php
     $host = "localhost";
     $user = "root";
-    $clave = "123456";
+    $clave = "";
     $bd = "card";
     $conexion = mysqli_connect($host,$user,$clave,$bd);
     if (mysqli_connect_errno()){

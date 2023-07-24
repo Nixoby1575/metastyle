@@ -81,7 +81,7 @@ function mostrarNombreUsuario() {
 $query_categorias = mysqli_query($conexion, "SELECT DISTINCT categoria FROM categorias");
 $categorias = mysqli_fetch_all($query_categorias, MYSQLI_ASSOC);
 ?>
-                        <a href="#" class="TITTLE-SA" category="all">Categorías</a>
+<a href="#" class="TITTLE-SA" category="all">Categorías</a>
 
 <form action="" method="GET">
     <div class="filter-box">
@@ -90,7 +90,7 @@ $categorias = mysqli_fetch_all($query_categorias, MYSQLI_ASSOC);
         <option value="">Todas las categorías</option>
         <?php foreach ($categorias as $categoria) { ?>
             <option value="<?php echo $categoria['categoria']; ?>" <?php if (isset($_GET['categoria']) && $_GET['categoria'] == $categoria['categoria']) echo 'selected'; ?>>
-                <?php echo $categoria['categoria']; ?>
+            <?php echo $categoria['categoria']; ?>
             </option>
         <?php } ?>
     </select>
@@ -101,27 +101,27 @@ $categorias = mysqli_fetch_all($query_categorias, MYSQLI_ASSOC);
 
 
 
-<?php
-if (isset($_GET['categoria']) && $_GET['categoria'] !== '') {
-    $categoriaSeleccionada = $_GET['categoria'];
 
-    // Realiza la consulta filtrando por categoría
-    $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria WHERE c.categoria = '$categoriaSeleccionada'");
-} else {
-    // Consulta sin filtro de categoría
-    $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria");
-}
-
-$result = mysqli_num_rows($query);
-
-if ($result > 0) {
-    while ($data = mysqli_fetch_assoc($query)) {
-        ?>
         <section class="py-5">
         <div class="container px-4 px-lg-5">
+        <?php
+        if (isset($_GET['categoria']) && $_GET['categoria'] !== '') {
+            $categoriaSeleccionada = $_GET['categoria'];
+
+            // Realiza la consulta filtrando por categoría
+            $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria WHERE c.categoria = '$categoriaSeleccionada'");
+        } else {
+            // Consulta sin filtro de categoría
+            $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria");
+        }
+
+        $result = mysqli_num_rows($query);
+
+        if ($result > 0) {
+            while ($data = mysqli_fetch_assoc($query)) {
+        ?>
             <div class="row gx-4 gx-lg-5 row-cols-2 row-cols-md-3 row-cols-xl-4 justify-content-center">
                 <?php
-                $query = mysqli_query($conexion, "SELECT p.*, c.id AS id_cat, c.categoria FROM productos p INNER JOIN categorias c ON c.id = p.id_categoria");
                 $result = mysqli_num_rows($query);
                 if ($result > 0) {
                     while ($data = mysqli_fetch_assoc($query)) { ?>
@@ -169,8 +169,9 @@ if ($result > 0) {
             </div>
         </div>
         <?php
-    }
-} else {?>
+            }
+        } else {
+        ?>
 
 
 <div class="box-error">
